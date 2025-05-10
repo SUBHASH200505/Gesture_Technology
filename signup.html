@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Successful - Gesture Recognition</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #1c92d2, #f2fcfe);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+            color: white;
+        }
+
+        /* Success Container */
+        .success-container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px 60px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 100%;
+            max-width: 600px; /* Limit the width for laptops and mobile */
+            margin: 0 20px;
+        }
+
+        .success-container h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        p.project-info {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            color: #ddd;
+            line-height: 1.6;
+        }
+
+        .back-btn {
+            padding: 12px 25px;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-btn:hover {
+            background: linear-gradient(90deg, #0072ff, #00c6ff);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .success-container {
+                padding: 30px 40px;
+            }
+
+            .success-container h1 {
+                font-size: 2.2rem;
+            }
+
+            p.project-info {
+                font-size: 1rem;
+            }
+
+            .back-btn {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Success Container -->
+    <div class="success-container">
+        <h1>Sign Up Successful!</h1>
+        
+        <p class="project-info">
+            Congratulations on signing up for the Gesture Recognition Project! You are now part of an innovative journey where we are revolutionizing how humans interact with technology using hand gestures. 
+            <br><br>
+            This is just the beginning! In the near future, we'll expand this technology to create more intuitive, hands-free controls for various devices, making everyday interactions more seamless and accessible for everyone.
+            <br><br>
+            The possibilities are endless—smart homes, entertainment, healthcare, and more. We are thrilled to have you on board as we move forward in shaping the future of gesture-based interaction!
+        </p>
+
+        <button class="back-btn" onclick="window.location.href='login.html';">Back to Login</button>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gesture Recognition Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('https://www.w3schools.com/w3images/mountains.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            color: white;
+        }
+
+        /* Welcome Audio */
+        #welcome-audio {
+            display: none;
+        }
+
+        /* Floating Particle Animation */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Login Container */
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px 60px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            color: white;
+            width: 400px;
+            position: relative;
+        }
+
+        .container img {
+            width: 100px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        input {
+            padding: 15px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input[type="text"], input[type="password"] {
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+        }
+
+        input:focus {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        button {
+            padding: 15px;
+            font-size: 1.1rem;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: linear-gradient(90deg, #0072ff, #00c6ff);
+        }
+
+        .sign-in-btn {
+            margin-top: 15px;
+            padding: 15px;
+            background: #28a745;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .sign-in-btn:hover {
+            background: #218838;
+        }
+
+        /* Footer */
+        footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 1rem;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Welcome Audio -->
+    <audio id="welcome-audio" autoplay>
+        <source src="https://freesound.org/data/previews/331/331912_3248244-lq.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Login Container -->
+    <div class="container floating">
+        <img src=""C:\Users\SUBASH\OneDrive\Desktop\succes\static\images\geture1.png"" alt="Gesture Icon">
+        <h1>Gesture Recognition Login</h1>
+        <form onsubmit="event.preventDefault(); redirectToGesturePage();">
+            <input type="text" placeholder="Enter Username" required>
+            <input type="password" placeholder="Enter Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <button class="sign-in-btn" onclick="window.location.href='sign.html';">Sign In</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2024 Gesture Recognition Project
+    </footer>
+
+    <script>
+        // Redirect to the success page and show welcome message
+        function redirectToGesturePage() {
+            // Show the welcome pop-up message
+            alert("Welcome!");
+            
+            // Redirect to the 'success3.html' page
+            window.location.href = "success3.html";
+        }
+    </script>
+</body>
+</html>

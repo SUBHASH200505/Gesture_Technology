@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Gesture Recognition</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url("https://www.w3schools.com/w3images/mountains.jpg") no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            color: white;
+        }
+
+        /* Sign In Container */
+        .sign-in-container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px 60px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            color: white;
+            width: 400px;
+            z-index: 2;
+        }
+
+        .sign-in-container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        input {
+            padding: 15px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+        }
+
+        input:focus {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        button {
+            padding: 15px;
+            font-size: 1.1rem;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: linear-gradient(90deg, #0072ff, #00c6ff);
+        }
+
+        /* Footer */
+        footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 1rem;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        footer a {
+            color: #00c6ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Iron Man Circular Animation */
+        .iron-man-container {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            animation: spin 6s linear infinite;
+            z-index: 1;
+        }
+
+        .iron-man-container img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg) translateX(150px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(150px) rotate(-360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Iron Man Animation -->
+    <div class="iron-man-container">
+        <img src="C:\Users\SUBASH\OneDrive\Desktop\succes\static\images\gesture2.png" alt="Iron Man">
+    </div>
+
+    <!-- Sign In Container -->
+    <div class="sign-in-container">
+        <h1>Create an Account</h1>
+        <form onsubmit="event.preventDefault(); createAccount();">
+            <input type="text" id="fullName" placeholder="Enter Full Name" required>
+            <input type="email" id="email" placeholder="Enter Email" required>
+            <input type="password" id="password" placeholder="Create Password" required 
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                title="Password must contain at least 8 characters, including uppercase, lowercase letters, and numbers.">
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2024 Gesture Recognition Project | <a href="https://example.com">Learn More</a>
+    </footer>
+
+    <script>
+        // Function to simulate account creation
+        function createAccount() {
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (fullName && email && password) {
+                alert(`Account created successfully for ${fullName}!`);
+                window.location.href = "signup.html"; // Redirect to signup confirmation page
+            } else {
+                alert("Please fill out all fields correctly.");
+            }
+        }
+    </script>
+
+</body>
+</html>

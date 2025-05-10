@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Control Dashboard - By Subhash</title>
+    <style>
+        /* Basic Page Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Header and Title Styles */
+        h1 {
+            font-size: 50px;
+            margin-top: 20px;
+            color: #ffcc00;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        h2 {
+            font-size: 30px;
+            color: #ffcc00;
+            margin-bottom: 0;
+        }
+
+        /* Live Time Display */
+        .time {
+            font-size: 24px;
+            margin-top: 10px;
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        /* Description Styles */
+        .description {
+            font-size: 18px;
+            margin: 20px auto;
+            color: #e6e6e6;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            width: 70%;
+        }
+
+        /* Control Panel Container */
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        /* Image Styles */
+        .control {
+            margin: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .control img {
+            width: 150px;
+            height: 150px;
+            cursor: pointer;
+            border-radius: 10px;
+            border: 2px solid #ffcc00;
+            transition: transform 0.2s;
+        }
+
+        /* Hover Effects */
+        .control img:hover {
+            transform: scale(1.1);
+        }
+
+        .control p {
+            color: #fff;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        /* Footer Styles */
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 0;
+            color: #ffcc00;
+            font-size: 18px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Gesture Control Dashboard</h1>
+    <h2>Control Your Media, Mouse, PPT, Sound, Games, and Workout</h2>
+
+    <div class="time" id="liveTime"></div>
+
+    <div class="description">
+        Welcome to the Media Control Dashboard. Click on the corresponding icon below to perform the desired action directly within your browser.
+    </div>
+
+    <div class="container">
+        <div class="control">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.s2Cd6nT3a0vBUAHmgKGoUgHaFc&pid=Api&P=0&h=180" alt="Media Control" onclick="executeControl('media_control')" />
+            <p>Media Control</p>
+        </div>
+        <div class="control">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.k9K3wAVl0vorhWBT6BuI-AHaEK&pid=Api&P=0&h=180" alt="Mouse Control" onclick="executeControl('mouse_control')" />
+            <p>Mouse Control</p>
+        </div>
+        <div class="control">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.9WYP0IkbcMHjWtJZqvLaWQHaE8&pid=Api&P=0&h=180" alt="PPT Control" onclick="executeControl('ppt_control')" />
+            <p>PPT Control</p>
+        </div>
+        <div class="control">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.Rl3Grq-s1FBOvYt0uOaQJgHaDq&pid=Api&P=0&h=180" alt="Sound Control" onclick="executeControl('sound_control')" />
+            <p>Sound Control</p>
+        </div>
+        <div class="control">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.ml5zsx3_9dy5nUQST7xhpAHaHa&pid=Api&P=0&h=180" alt="Game Control" onclick="executeControl('game_control')" />
+            <p>Game Control</p>
+        </div>
+        <div class="control">
+            <img src="https://www.time4nutrition.co.uk/wp-content/uploads/2023/07/shutterstock_2310881869-scaled.jpg" alt="Workout Control" onclick="executeControl('workout_control')" />
+            <p>Workout Control</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Website created by Subhash © 2024</p>
+    </footer>
+
+    <script>
+        function displayTime() {
+            const timeElement = document.getElementById('liveTime');
+            const now = new Date();
+            timeElement.textContent = `Current Time: ${now.toLocaleTimeString()}`;
+        }
+        setInterval(displayTime, 1000);
+
+        function executeControl(control) {
+            fetch(`/${control}`)
+                .then(response => response.json())
+                .then(data => alert(`${control.replace('_', ' ')} executed successfully!`))
+                .catch(error => alert(`Error executing ${control}: ${error.message}`));
+        }
+    </script>
+</body>
+</html>
